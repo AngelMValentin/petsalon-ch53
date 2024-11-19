@@ -1,4 +1,4 @@
-function displayPet() {
+function displayRow() {
     let card = document.getElementById("pets");
     let result = "";
 
@@ -6,24 +6,32 @@ function displayPet() {
         let pet = pets[i];
 
         result += `
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">${pet.name}</h5>
-                    <p class="card-text">
-                        Age: ${pet.age}<br>
-                        Gender: ${pet.gender}<br>
-                        Breed: ${pet.breed}<br>
-                        Service: ${pet.service}
-                    </p>
-                    <button class="btn btn-primary">View</button>
-                </div>
-            </div>
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col" style="width: 15%;">Pet Number</th>
+                <th scope="col" style="width: 15%;">Name</th>
+                <th scope="col" style="width: 15%;">Age</th>
+                <th scope="col" style="width: 15%;">Gender</th>
+                <th scope="col" style="width: 15%;">Service</th>
+                <th scope="col" style="width: 15%;">Breed</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                <th scope="row">${i}</th>
+                <td class="align-top">${pet.name}</td>
+                <td class="align-top">${pet.age}</td>
+                <td class="align-top">${pet.gender}</td>
+                <td class="align-top">${pet.service}</td>
+                <td class="align-top">${pet.breed}</td>
+                </tr>
+            </tbody>
+        </table>
         `
     }
 
     card.innerHTML = result;
 }
 
-displayPet();
+displayRow();

@@ -52,7 +52,7 @@ function init(){
     // creating the obj
     // create two more pets 
     pets.push(pet1, pet2, pet3);
-    displayPet();
+    displayRow();
 }
 
 window.onload = init; // wait to render the HTML

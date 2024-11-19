@@ -8,40 +8,37 @@ let petSalon = {
     }
 }
 
-// creating the pets 
-let pet1={
-    name:"Scooby",
-    age:80,
-    gender:"Male"
+// object constructor
+function Pet(name, age, gender, breed, service) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.service = service;
 }
-let pet2={
-    name:"Scrappy",
-    age:70,
-    gender:"Male"
-}
-let pet3={
-    name:"Scruffy",
-    age:60,
-    gender:"Male",
-    service: "comfort",
-    breed: "Husky"
-}
-// push the obj into the array 
-pets.push(pet1, pet2, pet3);
 
-function displayPetNames(){
-    document.getElementById("petslength").innerHTML += `<p>We have ${pets.length} pets</p>`;
-    for(let i=0;i<pets.length;i++){
-        document.getElementById("petList").innerHTML += `<li>We have ${pets[i].name}</li>`;
-    }
+// add breed and service 
+// register function 
+
+// validation function
+
+function register(){
+    let inputName = document.getElementById("txtName").value;
+    let inputAge = document.getElementById("txtAge").value;
+    let inputGender = document.getElementById("txtGender").value;
+    let inputBreed = document.getElementById("txtBreed").value;
+    let inputService = document.getElementById("txtService").value;
     
+    console.log(inputName, inputAge, inputGender, inputBreed, inputService);
 }
 
-displayPetNames();
+function init(){
+    //execution code should be inside of this function
+    let pet1 = new Pet("Scooby", 99, "Male", "Dane", "Grooming");
+    let pet2 = new Pet("Scrappy", 98, "Male", "Mixed", "Vaccines");
+    // creating the obj
+    // create two more pets 
+    console.log(pet1, pet2);
+}
 
-
-
-
- // ----- html button info 
- // --- change color if you want with btn-(desired style) class
- // ---------- <button class="btn btn-dark" onclick="displayPetNames()">Display names</button>
+window.onload = init; // wait to render the HTML

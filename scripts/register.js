@@ -28,17 +28,31 @@ function register(){
     let inputGender = document.getElementById("txtGender").value;
     let inputBreed = document.getElementById("txtBreed").value;
     let inputService = document.getElementById("txtService").value;
+
+    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);
+
+    pets.push(newPet);
     
-    console.log(inputName, inputAge, inputGender, inputBreed, inputService);
+    console.log(newPet);
+}
+
+function clear(){
+    document.getElementById("txtName").value = "";
+    document.getElementById("txtAge").value = "";
+    document.getElementById("txtGender").value = "";
+    document.getElementById("txtBreed").value = "";
+    document.getElementById("txtService").value = "";
 }
 
 function init(){
     //execution code should be inside of this function
     let pet1 = new Pet("Scooby", 99, "Male", "Dane", "Grooming");
     let pet2 = new Pet("Scrappy", 98, "Male", "Mixed", "Vaccines");
+    let pet3 = new Pet("Scruffy", 22, "Female", "Golden Retriever", "Bath");
     // creating the obj
     // create two more pets 
-    console.log(pet1, pet2);
+    pets.push(pet1, pet2, pet3);
+    displayPet();
 }
 
 window.onload = init; // wait to render the HTML

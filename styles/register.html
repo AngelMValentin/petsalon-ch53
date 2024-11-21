@@ -16,7 +16,7 @@
 
                 <div class="container-fluid">
                     <!-- LOGO -->
-                    <a class="navbar-brand" href="index.html">The Fashion Pet</a>
+                    <a class="navbar-brand" href="/styles/Pet-Salon.html">The Fashion Pet</a>
 
                     <!-- NAVBAR BUTTONS, DROPDOWN, AND SEARCH BAR -->
 
@@ -25,24 +25,11 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="/styles/Pet-Salon.html">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="register.html">Register</a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                                <a class="nav-link" href="/styles/register.html">Register</a>
                             </li>
 
                         </ul>
@@ -59,37 +46,50 @@
 
     <main>
         <h2>Register</h2>
+        <p class="error" id="error"></p>
 
         <div class="container-sm">
             <div class="row">
                 <div class="col">
                     <label class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="txtName">
+                    <input required type="text" class="form-control" id="txtName">
                 </div>
                 <div class="col">
                     <label class="form-label">Age:</label>
-                    <input type="number" class="form-control" id="txtAge">
+                    <input required type="number" class="form-control" id="txtAge">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label class="form-label">Gender:</label>
-                    <input type="text" class="form-control" id="txtGender">
+                    <input required type="text" class="form-control" id="txtGender">
                 </div>
                 <div class="col">
                     <label class="form-label">Breed:</label>
-                    <input type="text" class="form-control" id="txtBreed">
+                    <input required type="text" class="form-control" id="txtBreed">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label">Service:</label>
-                    <input type="text" class="form-control" id="txtService">
+
+                    <select class="form-select" id="txtService">
+
+                        <option value="" disabled selected> -- select a service --</option>
+
+                        <option value="Grooming">Grooming</option>
+
+                        <option value="Vaccines">Vaccines</option>
+
+                        <option value="Nails">Nails</option>
+
+                    </select>
+
                 </div>
             </div>
             <br>
-            <button onclick="register()" type="button" class="btn btn-primary">Register</button>
-            <button onclick="clear()" type="button" class="btn btn-danger btn-space">Clear</button>
+            <button id="registerBtn" onclick="register()" type="button" class="btn btn-primary">Register</button>
+            <button onclick="clearFields()" type="button" class="btn btn-danger btn-space">Clear Fields</button>
         </div>
 
         <p id="petslength"></p>
@@ -97,8 +97,15 @@
         </ul>
 
         <h2>Registered Pets</h2>
+        <label>Total:</label>
+        <p id="total"></p>
+        <label>Grooming:</label>
+        <p id="gTotal"></p>
+        <label>Vaccines:</label>
+        <p id="vaccines"></p>
+        <label>Nails:</label>
+        <p id="nails"></p>
         <div id="pets" class="container row row-cols-3">
-
         </div>
     </main>
 

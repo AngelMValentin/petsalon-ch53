@@ -1,10 +1,12 @@
+
+
+
+
 .btn-space {
     margin-left: 2rem;
 }
 
-#error{
-    width: 18rem;
-    color: rgb(255, 0, 0);
-    background-color: rgba(217, 169, 169, 0.337);
-    text-align: center;
-}
+.error {
+    background-color: rgb(255, 179, 179);
+    border: solid 1px red;
+  }

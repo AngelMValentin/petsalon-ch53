@@ -40,6 +40,7 @@ function register() {
     let newService = new Service(inputDescription, inputPrice); // new obj
 
     if(validService(newService)) {
+        save(newService);
         services.push(newService);
         console.log(newService);
         $("#txtDescription").val(""); // clear the form
@@ -48,5 +49,8 @@ function register() {
 }
 
 function init() {
-    // hook events
-}
+    //hook events
+    $("#btnRegister").on('click',register);
+  }
+  
+  window.onload = init;

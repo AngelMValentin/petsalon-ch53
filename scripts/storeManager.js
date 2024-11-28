@@ -19,6 +19,4 @@ function read() {
         let list = JSON.parse(data);
         return list;
     }
-
-    return data;
 }

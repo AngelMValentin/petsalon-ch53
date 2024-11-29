@@ -9,4 +9,12 @@
 .error {
     background-color: rgb(255, 179, 179);
     border: solid 1px red;
-  }
+}
+
+.service-btn {
+    margin-top: 1rem;
+}
+
+.form-div {
+    margin: 1rem 0;
+}

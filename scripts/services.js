@@ -1,6 +1,6 @@
 let services = [];
 
-// constructor Service 
+// service constructor 
 function Service(description, price) {
     this.description = description;
     this.price = price;
@@ -28,7 +28,9 @@ function validService(service) {
         $("#priceRequiredText").hide();
     }
 
-    // service.price validation
+    // ^^ if service description (without any spaces) is false, throw an error
+    // if it is valid then remove error
+
 
     return isValid;
 }
@@ -42,15 +44,20 @@ function register() {
     if(validService(newService)) {
         save(newService);
         services.push(newService);
+
+        alert("Service added successfully!");
+
         console.log(newService);
         $("#txtDescription").val(""); // clear the form
         $("#txtPrice").val(""); 
+        $("#descRequiredText").hide();
+        $("#priceRequiredText").hide();
+    }else {
+        alert("Please fill in all required fields correctly.");
     }
-}
 
-function init() {
-    //hook events
-    $("#btnRegister").on('click',register);
-  }
-  
-  window.onload = init;
+    // ^^ if the new service is valid then save to local storage and push it into the array
+    // then give a successful alert and clear the form
+    // if it is not, then give an error alert
+
+}

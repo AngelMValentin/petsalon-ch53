@@ -39,6 +39,9 @@ function register(){
         document.getElementById("error").innerText = "You did it wrong 😡";
         return;
     }
+
+    // ^^ I realize that this if statement is very unnecessary and redundant but im scared to change it lol 
+    // the angry face is a joke, pls don't get mad.
     
 
     let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);
@@ -56,6 +59,25 @@ function clearFields(){
     document.getElementById("txtService").value = "";
 }
 
+function populateDropdown() {
+    const services = read(); 
+    const dropdown = $("#txtService");
+
+    dropdown.find("option:not(:first)").remove();
+
+    services.forEach(service => {
+        const option = $("<option></option>")
+        .val(service.description) // Set value attribute
+        .text(`${service.description} - $${service.price}`);
+
+        dropdown.append(option);
+    });
+}
+
+// ^^ I don't know why writing using jQuery is hard for me. 
+// I used 101% of my brain for this.
+
+
 function init(){
     //execution code should be inside of this function
     let pet1 = new Pet("Scooby", 99, "Male", "Dane", "Grooming");
@@ -65,6 +87,7 @@ function init(){
     // create two more pets 
     pets.push(pet1, pet2, pet3);
     displayRow();
+    populateDropdown();
 }
 
 window.onload = init; // wait to render the HTML

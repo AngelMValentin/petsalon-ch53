@@ -18,3 +18,24 @@
 .form-div {
     margin: 1rem 0;
 }
+
+.carousel .carousel-item {
+    max-height:550px;
+}
+
+.carousel-item img {
+    max-height:550px;
+}
+
+.img-1 {
+    object-fit: contain;
+}
+
+.img-2 {
+    object-fit: contain;
+}
+
+.img-3 {
+    object-fit: contain;
+}
+
